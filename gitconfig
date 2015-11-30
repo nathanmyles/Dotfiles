@@ -1,7 +1,8 @@
 [user]
-	name = nathanmyles
+	name = Nathan Myles
 	email = myles.n.a@gmail.com
 [push]
 	default = current
 [core]
 	editor = vi
+	excludesfile = ~/.gitignore
