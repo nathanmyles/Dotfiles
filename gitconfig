@@ -5,4 +5,4 @@
 	default = current
 [core]
 	editor = vi
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
