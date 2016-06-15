@@ -13,3 +13,5 @@ ehthumbs.db
 \#*\#
 /tags
 /.bundle/
+*.iml
+/.idea/
