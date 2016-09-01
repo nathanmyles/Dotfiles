@@ -20,5 +20,5 @@
 
 ###Fork the Repo
 
-create a fork of this repo so you can have your own set off configuration!
+create a fork of this repo so you can have your own set of configuration!
 
