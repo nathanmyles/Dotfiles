@@ -2,7 +2,7 @@
 
 ##Getting Started
 
-###prerequisite
+###Prerequisite
 1. `pip`
 	- ubuntu - `sudo apt-get install python-pip python-dev build-essential`
 	- mac - `brew install python`
