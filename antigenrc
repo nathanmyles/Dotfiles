@@ -26,6 +26,6 @@ then
 fi
 
 # Non oh-my-zsh theme
-antigen theme nathanmyles/nate
+antigen theme nathanmyles/Dotfiles
 
 antigen apply
