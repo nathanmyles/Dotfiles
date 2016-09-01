@@ -25,7 +25,7 @@ then
     hash brew 2>/dev/null && antigen bundle brew
 fi
 
-# Non oh-my-zsh theme
+# zsh theme
 antigen theme nathanmyles/Dotfiles
 
 antigen apply

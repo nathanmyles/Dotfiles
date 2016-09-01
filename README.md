@@ -4,13 +4,13 @@
 
 ###prerequisite
 1. `pip`
-..* ubuntu - `sudo apt-get install python-pip python-dev build-essential`
-..* mac - `brew install python`
+	- ubuntu - `sudo apt-get install python-pip python-dev build-essential`
+	- mac - `brew install python`
 1. update `pip` - `sudo pip install --upgrade pip`
 1. `dotfiles` from `pip` - `sudo pip install dotfiles`
 1. `zsh`
-..* ubuntu - `sudo apt-get install zsh`
-..* mac - `brew install zsh`
+	- ubuntu - `sudo apt-get install zsh`
+	- mac - `brew install zsh`
 1. make `zsh` your default terminal - `chsh -s $(which zsh)`
 
 ###Sync dotfiles
