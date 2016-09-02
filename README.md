@@ -1,4 +1,4 @@
-#Manage dotfiles like boss
+#Manage dotfiles like a boss
 
 ##Getting Started
 
