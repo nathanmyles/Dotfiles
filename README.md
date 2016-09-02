@@ -4,7 +4,7 @@
 
 ###Prerequisite
 1. install `pip`
-	- ubuntu - `sudo apt-get install python-pip python-dev build-essential`
+	- ubuntu - `sudo apt-get install python-pip`
 	- mac - `brew install python`
 1. update `pip` - `sudo pip install --upgrade pip`
 1. install `dotfiles` from `pip` - `sudo pip install dotfiles`
