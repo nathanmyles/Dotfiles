@@ -22,3 +22,5 @@
 
 create a fork of this repo so you can have your own set of configuration!
 
+__Make sure you edit the zsh-theme in `antigenrc` to point to your fork__
+

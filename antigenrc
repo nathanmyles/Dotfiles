@@ -26,6 +26,7 @@ then
 fi
 
 # zsh theme
+# if you fork this repo, change this to match your fork
 antigen theme nathanmyles/Dotfiles
 
 antigen apply
