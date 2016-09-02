@@ -8,3 +8,11 @@ setjdk() {
 	export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 }
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR=~/.nvm
+  . $(brew --prefix nvm)/nvm.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
