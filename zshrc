@@ -1,12 +1,9 @@
 source ~/.antigen.zsh
 source ~/.antigenrc
+source ~/.custom_functions
 
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
-
-setjdk() {
-	export JAVA_HOME=$(/usr/libexec/java_home -v $1)
-}
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
