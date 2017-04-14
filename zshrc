@@ -17,3 +17,5 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 export PATH="$PATH:$HOME/Library/Android/sdk/tools"
 
+source ~/.git-linked/git-linked.sh
+
