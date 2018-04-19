@@ -8,8 +8,11 @@ bindkey '^[[B' down-line-or-search
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export NVM_DIR=~/.nvm
-  . $(brew --prefix nvm)/nvm.sh
+if [[ "$OSTYPE" == "darwin"* ]] ;
+then
+  export NVM_DIR=~/.nvm
+    . $(brew --prefix nvm)/nvm.sh
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
