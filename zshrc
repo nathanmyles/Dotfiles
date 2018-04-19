@@ -20,5 +20,8 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 export PATH="$PATH:$HOME/Library/Android/sdk/tools"
 
+export GOPATH="$HOME/Documents/workspace/go"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+
 source ~/.git-linked/git-linked.sh
 
