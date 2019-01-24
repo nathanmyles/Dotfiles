@@ -2,3 +2,7 @@ setjdk() {
     export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 }
 
+function virtualenv_info { 
+ [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+

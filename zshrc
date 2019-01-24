@@ -25,3 +25,5 @@ export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
 source ~/.git-linked/git-linked.sh
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+

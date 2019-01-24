@@ -27,6 +27,6 @@ fi
 
 # zsh theme
 # if you fork this repo, change this to match your fork
-antigen theme nathanmyles/Dotfiles
+antigen theme nathanmyles/Dotfiles --branch=nate
 
 antigen apply
