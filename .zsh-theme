@@ -8,8 +8,8 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 PROMPT='\
 ╭─[%{$fg[cyan]%}%D{%F %I:%M:%S%p}%{$reset_color%}] \
-%{$fg[$NCOLOR]%}%n%{$reset_color%}@%{$fg[$MCOLOR]%}%m %{$reset_color%} \
-%{$fg[green]%}$(virtualenv_info)%{$reset_color%} \
+%{$fg[$NCOLOR]%}%n%{$reset_color%}@%{$fg[$MCOLOR]%}%m%{$reset_color%} \
+%{$fg[green]%}$(virtualenv_info)%{$reset_color%}\
 %{$fg_bold[cyan]%}%~%{$reset_color%} \
 $(git_prompt_info) $(git_prompt_status)%{$reset_color%}
 ╰─%{$fg_bold[$NCOLOR]%}➤ %{$reset_color%}'
