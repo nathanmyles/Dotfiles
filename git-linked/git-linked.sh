@@ -50,16 +50,16 @@ git () {
     command git "$@"
 
     # command failed
-    if [ $? -ne 0 ] ;
-    then
-        audio_file=~/.git-linked/zelda-link-hurt.mp3
-         # play sound based on OS
-        if [[ "$OSTYPE" == "darwin"* ]] ;
-        then
-            (Afplay "${audio_file}" &)
-        else
-            (ffplay -autoexit -nodisp -nostats -loglevel 0 ${audio_file} &)
-        fi
-
-    fi
+#    if [[ $? -ne 0 ]] ;
+#    then
+#        audio_file=~/.git-linked/zelda-link-hurt.mp3
+#         # play sound based on OS
+#        if [[ "$OSTYPE" == "darwin"* ]] ;
+#        then
+#            (Afplay "${audio_file}" &)
+#        else
+#            (ffplay -autoexit -nodisp -nostats -loglevel 0 ${audio_file} &)
+#        fi
+#
+#    fi
 }
