@@ -23,7 +23,7 @@ export PATH="$PATH:$HOME/Library/Android/sdk/tools"
 export GOPATH="$HOME/Documents/workspace/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
-source ~/.git-linked/git-linked.sh
+# source ~/.git-linked/git-linked.sh
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
