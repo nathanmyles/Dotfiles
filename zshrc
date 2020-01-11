@@ -27,3 +27,5 @@ export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+# use the docker engine inside minikube if it's installed
+hash minikube 2>/dev/null && eval $(minikube docker-env)
