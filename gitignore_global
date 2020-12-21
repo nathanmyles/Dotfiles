@@ -16,3 +16,5 @@ ehthumbs.db
 *.iml
 /.idea/
 .rake_tasks
+.python-version
+

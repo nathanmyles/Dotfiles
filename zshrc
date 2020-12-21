@@ -29,3 +29,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # use the docker engine inside minikube if it's installed
 hash minikube 2>/dev/null && eval $(minikube docker-env)
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+hash pyenv 2>/dev/null && eval "$(pyenv init -)"
+hash pyenv 2>/dev/null && eval "$(pyenv virtualenv-init -)"
+
