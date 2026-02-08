@@ -2,21 +2,9 @@
 
 ## Getting Started
 
-### Prerequisite
-1. install `pip`
-	- ubuntu - `sudo apt-get install python-pip`
-	- mac - `brew install python`
-1. update `pip` - `sudo pip install --upgrade pip`
-1. install `dotfiles` from `pip` - `sudo pip install dotfiles`
-1. install `zsh`
-	- ubuntu - `sudo apt-get install zsh`
-	- mac - `brew install zsh`
-1. make `zsh` your default terminal - `chsh -s $(which zsh)`
-
 ### Sync dotfiles
 1. clone the repo into your home directory `git clone https://github.com/nathanmyles/Dotfiles.git`
-1. sync dotfiles - `dotfiles --sync`
-1. `source ~/.zshrc`
+2. sync dotfiles - `cd Dotfiles && ./install.sh`
 
 ### Fork the Repo
 
