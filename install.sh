@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-# Define a function which rename a `target` file to `target.backup` if the file
-# exists and if it's a 'real' file, ie not a symlink
 backup() {
   target=$1
   if [ -e "$target" ]; then
@@ -21,19 +19,80 @@ symlink() {
   fi
 }
 
-# For all files `$name` in the present folder except `install.sh`, `README.md`
-# backup the target file located at `~/.$name` and symlink `$name` to `~/.$name`
+link_dotfiles() {
+  local src=$1
+  local dest=$2
+
+  for item in "$src"/*; do
+    [ -e "$item" ] || continue
+    local name=$(basename "$item")
+
+    if [[ -d "$item" ]]; then
+      mkdir -p "$dest/$name"
+      link_dotfiles "$item" "$dest/$name"
+    else
+      backup "$dest/$name"
+      symlink "$item" "$dest/$name"
+    fi
+  done
+}
+
+add_dotfile() {
+  local target=$(realpath "$1")
+  local dest=""
+
+  # Check if target is nested inside a dot-directory (e.g. ~/.config/nvim)
+  if [[ "$target" == "$HOME/."*"/"* ]]; then
+    local relative="${target#$HOME/.}"  # strips ~/. → config/nvim
+    dest="$SCRIPT_DIR/$relative"
+  else
+    # Top-level dotfile (e.g. ~/.zshrc → zshrc)
+    dest="$SCRIPT_DIR/$(basename "$target")"
+  fi
+
+  if [[ -e "$dest" ]]; then
+    echo "-----> $(basename "$target") already exists in dotfiles, skipping"
+    return
+  fi
+
+  echo "-----> Adding $(basename "$target") to dotfiles"
+  mkdir -p "$(dirname "$dest")"
+  cp -r "$target" "$dest"
+
+  if [[ -d "$dest" ]]; then
+    mkdir -p "$target"
+    link_dotfiles "$dest" "$target"
+  else
+    backup "$target"
+    symlink "$dest" "$target"
+  fi
+
+  echo "-----> Done! Don't forget to git add $dest"
+}
+
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 IGNORE_FILES=$(paste -sd'|' "$SCRIPT_DIR"/dotfile_ignore)
+
+# Usage: ./install.sh add ~/.someconfig
+if [[ "$1" == "add" && -n "$2" ]]; then
+  add_dotfile "$2"
+  exit 0
+fi
+
 for name in "$SCRIPT_DIR"/*; do
-  if [[ ! -d "$name" ]]; then
-    file_name=$(basename ${name})
-    if [[ ! "$file_name" =~ ^("$IGNORE_FILES")$ ]]; then
-      target="$HOME/.$file_name"
-      backup $target
-      symlink $PWD/$file_name $target
-    fi
+  file_name=$(basename "$name")
+
+  [[ "$file_name" =~ ^("$IGNORE_FILES")$ ]] && continue
+
+  if [[ -d "$name" ]]; then
+    mkdir -p "$HOME/.$file_name"
+    link_dotfiles "$name" "$HOME/.$file_name"
+  else
+    target="$HOME/.$file_name"
+    backup $target
+    symlink $name $target
   fi
 done
 
 exec zsh
+
