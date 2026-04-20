@@ -47,7 +47,8 @@ add_dotfile() {
     dest="$SCRIPT_DIR/$relative"
   else
     # Top-level dotfile (e.g. ~/.zshrc → zshrc)
-    dest="$SCRIPT_DIR/$(basename "$target")"
+    local name="$(basename "$target")"
+    dest="$SCRIPT_DIR/${name#.}"
   fi
 
   if [[ -e "$dest" ]]; then
