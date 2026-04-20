@@ -6,12 +6,12 @@ else
 fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='\
-╭─[%{$fg[cyan]%}%D{%F %I:%M:%S%p}%{$reset_color%}] \
-%{$fg[$NCOLOR]%}%n%{$reset_color%}@%{$fg[$MCOLOR]%}%m\
-%{$reset_color%} %{$fg_bold[cyan]%}%~ \
-$(git_prompt_info) $(git_prompt_status)%{$reset_color%}
-╰─%{$fg_bold[$NCOLOR]%}➤ %{$reset_color%}'
+PROMPT='╭─[%{$fg[cyan]%}%D{%F %I:%M:%S%p}%{$reset_color%}] '
+PROMPT+='%{$fg[$NCOLOR]%}%n%{$reset_color%}@%{$fg[$MCOLOR]%}%m'
+PROMPT+='%{$reset_color%} %{$fg_bold[cyan]%}%~ '
+PROMPT+='$(git_prompt_info) $(git_prompt_status)%{$reset_color%}'
+PROMPT+=$'\n'
+PROMPT+='╰─%{$fg_bold[$NCOLOR]%}➤ %{$reset_color%}'
 
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
